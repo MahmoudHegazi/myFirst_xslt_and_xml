@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--employees starts here-->
+<employees>
+  <user>
+    <name>Mahmoud Hegazy</name>
+    <country>Egypt</country>
+    <age>26</age>
+    <specialization>Full Stack Python Web Developer</specialization> 
+  </user>
+  <user>
+    <name>Ahmed Mazen</name>
+    <country>UAE</country>
+    <age>43</age>
+    <specialization>senior Web Graphics designer</specialization> 
+  </user>
+  <user>
+    <name>Mohamed Mahmoud</name>
+    <country>Saudi</country>
+    <age>40</age>
+    <specialization>Mobile User UI/UX developer</specialization> 
+  </user>
+  <user>
+    <name>Mohamed Ahmed </name>
+    <country>Egypt</country>
+    <age>27</age>
+    <specialization>Senior SEO Developer</specialization> 
+  </user>
+  <user>
+    <name>Ahmed Mohamed</name>
+    <country>Saudi</country>
+    <age>30</age>
+    <specialization>Junior database Developer</specialization> 
+  </user>
+  <user>
+    <name>Monuir Mohamed</name>
+    <country>Egypt</country>
+    <age>35</age>
+    <specialization>Senior Designer</specialization> 
+  </user>
+  <user>
+    <name>John doe</name>
+    <country>USA</country>
+    <age>140</age>
+    <specialization>UX/UI Developer</specialization> 
+  </user>
+  <user>
+    <name>Mohamed hamed</name>
+    <country>Canada</country>
+    <age>50</age>
+    <specialization>Back End Developer Python</specialization> 
+  </user>
+
+  <user>
+    <name>Monuir Ahmed</name>
+    <country>UAE</country>
+    <age>30</age>
+    <specialization>Full Stack Java Web Developer</specialization> 
+  </user>
+
+  <user>
+    <name>hamed Hegazy</name>
+    <country>Egypt</country>
+    <age>25</age>
+    <specialization>Front End Web Developer</specialization> 
+  </user>
+</employees>
+<!--employees ends here-->
+
+<!--customers starts here-->
+<customers>
+
+  <customer>
+    <name>Ahmed Hegazy</name>
+    <country>UAE</country>
+    <mobile>0113745200</mobile>
+    <id>1</id> 
+  </customer>
+
+  <customer>
+    <name>Ahmed Hegazy</name>
+    <country>Saudi</country>
+    <mobile>0123458200</mobile>
+    <id>2</id> 
+  </customer>
+
+  <customer>
+    <name>Ahmed Hegazy</name>
+    <country>Egypt</country>
+    <mobile>0103558255</mobile>
+    <id>3</id> 
+  </customer>
+  <customer>
+    <name>Ahmed Hegazy</name>
+    <country>UAE</country>
+    <mobile>0123458125</mobile>
+    <id>4</id> 
+  </customer>
+  <customer>
+    <name>Ahmed Hegazy</name>
+    <country>Egypt</country>
+    <mobile>0103988145</mobile>
+    <id>5</id> 
+  </customer>
+  <customer>
+    <name>Fahed Asam</name>
+    <country>Saudi</country>
+    <mobile>0103977123</mobile>
+    <id>6</id> 
+  </customer>
+  <customer>
+    <name>samir Mohamed</name>
+    <country>Canada</country>
+    <mobile>0103942155</mobile>
+    <id>6</id> 
+  </customer>
+  <customer>
+    <name>Amin Khaled</name>
+    <country>USA</country>
+    <mobile>01012388155</mobile>
+    <id>6</id> 
+  </customer>
+
+<!--customer ends here-->
+</customers>
+
