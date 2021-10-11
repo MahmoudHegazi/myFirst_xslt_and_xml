@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<style>
+table{
+ width: 100%;
+}
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th {
+ background: black;
+ color: white;
+}
+th,td {
+  padding: 8px;
+}
+</style>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    myFunction(this);
+  }
+  xhttp.open("GET", "cd_catalog.xml");
+  xhttp.send();
+}
+
+function queryXMLSelector(cd, selector){
+  return cd.getElementsByTagName(selector)[0].childNodes[0].nodeValue;
+}
+
+function SELECT(cd, ...selectors){
+
+  let selectResult = [];
+  let excute = true;
+  let validSelectors = Array.from(cd[0].children);
+  validSelectors = [];
+  
+     Array.from(cd[0].children).forEach(  (tag)=> {  
+     validSelectors.push(tag.tagName.trim());
+
+     }     
+     );
+     
+  const currentSelectors = [];
+
+
+        console.log(cd);
+  if (!selectors || !selectors[0]){
+  selectors = Array.from(selectors);
+    console.log("provid selectors sprated by comma");
+    return false;
+  }
+  
+  
+     let table=`<table><tr>`;
+   
+ selectors.forEach((select, index) => {
+   if (validSelectors.includes(select)){
+     currentSelectors.push(select);
+     table += "<th> " + select + "</th>";
+   }
+  });
+  
+  table += "</tr>";
+ if (!excute){
+   console.log("error", validSelectors);
+   return false;
+ }
+
+  
+
+   
+   
+ cd.forEach( (cdElm, index)=>{
+    const rowData = {};
+    table += "<tr>";
+    currentSelectors.forEach( (oneItem, selectorIndex)=>{
+       
+       rowData[oneItem] = cdElm.getElementsByTagName(oneItem)[0].childNodes[0].nodeValue;
+       
+
+                     table += `
+    
+      <td>${cdElm.getElementsByTagName(oneItem)[0].childNodes[0].nodeValue}</td>
+      `;
+
+    });
+    table += "</tr>";
+    
+
+    selectResult.push(rowData);
+ });
+ 
+ table += "</table>";
+
+ return {objects: selectResult, html:table};
+ 
+ 
+ 
+}
+
+
+
+function myFunction(xml) {
+  const xmlDoc = xml.responseXML;
+
+  
+  const allCds = Array.from(xmlDoc.getElementsByTagName("CD"));
+  const selectStatment = SELECT(allCds, "ARTIST", "TITLE", "COUNTRY");
+  /*
+  selectStatment.objects.forEach( (cd,index)=>{
+  
+
+  
+    let table=`
+  <tr>
+    <th>ARTIST</th>
+    <th>TITLE</th>
+    <th>COUNTRY</th>
+    <th>COMPANY</th>
+    <th>PRICE</th>
+    <th>YEAR</th>
+  </tr>`;
+  let artisit = queryXMLSelector(cd, "ARTIST");
+  let title = queryXMLSelector(cd, "TITLE");
+  let country = queryXMLSelector(cd, "COUNTRY");
+  let company = queryXMLSelector(cd, "COMPANY");
+  let price = queryXMLSelector(cd, "PRICE");
+  let year = queryXMLSelector(cd, "YEAR");
+      table += `
+    <tr>
+      <td>${cd.TITLE}</td>
+      <td>${cd.ARTIST}</td>
+    </tr>`;
+  });
+  table += "</table>";
+  
+});
+  */
+  document.getElementById("demo").innerHTML = selectStatment.html;
+}
+</script>
+
+</body>
+</html>
